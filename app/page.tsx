@@ -1,65 +1,131 @@
+import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 import Image from "next/image";
 
-export default function Home() {
+const pillars = [
+  {
+    title: "Medical Outreaches",
+    desc: "Free care delivered where access is limited.",
+    href: "/pillars/medical-outreaches",
+  },
+  {
+    title: "Surgical Services",
+    desc: "Life-changing interventions through local partners.",
+    href: "/pillars/surgical-services",
+  },
+  {
+    title: "Prevention & Education",
+    desc: "Community health education that saves lives.",
+    href: "/pillars/prevention-education",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="min-h-screen bg-brand-ivory text-brand-ink">
+      
+
+      {/* HERO */}
+      <section className="relative mx-auto max-w-[1240px] px-6 pt-0">
+        <div className="relative overflow-hidden rounded-[28px] border border-brand-line bg-white/40">
+          {/* Background image */}
+          <div className="absolute inset-0">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/hero.png"
+              alt="Sunshine Medical Care Initiative outreach"
+              fill
+              priority
+              className="object-cover"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+            {/* Premium multi-color overlays */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#0B0F14]/65 via-[#2FA84F]/25 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-bl from-[#C9A24A]/35 via-transparent to-[#E53935]/15" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,162,74,.35),transparent_50%)]" />
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
+
+          {/* Content */}
+          <div className="relative px-8 pt-28 pb-16 md:px-14 md:pt-40 md:pb-24">
+            <p className="text-xs uppercase tracking-[0.18em] text-white/80">
+              Sunshine Medical Care Initiative
+            </p>
+
+            <h1 className="mt-4 font-heading text-5xl md:text-6xl leading-[1.05] text-white">
+              Compassionate care. Real outcomes.
+            </h1>
+
+            <p className="mt-5 max-w-xl text-white/80 text-base md:text-lg">
+              We mobilize professionals to expand healthcare access for underserved communities.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button
+                href="/donate"
+                variant="primary"
+                className="bg-white text-brand-ink hover:bg-white/95"
+              >
+                Donate
+              </Button>
+
+              <Button
+                href="/partner"
+                variant="secondary"
+                className="border-white text-white hover:bg-white hover:text-brand-ink"
+              >
+                Partner
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* THREE PILLARS */}
+      <section className="mx-auto max-w-[1240px] px-6 py-14">
+        <div className="flex items-end justify-between gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-ink/60">
+              Our Pillars
+            </p>
+            <h2 className="mt-3 font-heading text-3xl">
+              Focused work. Clear priorities.
+            </h2>
+          </div>
+
+          <Link
+            href="/programs"
+            className="text-sm font-semibold text-brand-ink/70 hover:text-brand-ink"
+          >
+            View all programs
+          </Link>
+        </div>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {pillars.map((p) => (
+            <Link
+              key={p.title}
+              href={p.href}
+              className="group rounded-[24px] border border-brand-line bg-white/55 p-8 hover:bg-white transition"
+            >
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-ink/60">
+                Pillar
+              </p>
+
+              <h3 className="mt-3 font-heading text-2xl">{p.title}</h3>
+
+              <p className="mt-3 text-sm text-brand-ink/65">{p.desc}</p>
+
+              <div className="mt-8 h-px bg-brand-line" />
+
+              <p className="mt-4 text-sm font-semibold text-brand-ink/70">
+                Find out more
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      
+    </main>
   );
 }
