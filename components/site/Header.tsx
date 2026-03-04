@@ -32,7 +32,7 @@ export function Header() {
             : "bg-[#1B1E22]/85 backdrop-blur border-b border-white/10",
         ].join(" ")}
       >
-        {/* KEY FIX: readable glass layer when transparent */}
+        {/* readable glass layer when transparent */}
         {!scrolled && (
           <div className="pointer-events-none absolute inset-0 bg-black/25 backdrop-blur-[6px]" />
         )}
@@ -77,7 +77,6 @@ export function Header() {
             <Link className={`${navBase} ${navColor}`} href="/programs">Programs</Link>
             <Link className={`${navBase} ${navColor}`} href="/impact">Impact</Link>
             <Link className={`${navBase} ${navColor}`} href="/gallery">Gallery</Link>
-            <Link className={`${navBase} ${navColor}`} href="/get-involved">Get Involved</Link>
             <Link className={`${navBase} ${navColor}`} href="/contact">Contact</Link>
           </nav>
 
