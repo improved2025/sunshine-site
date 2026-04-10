@@ -1,24 +1,56 @@
 @import "tailwindcss";
 
-:root{
+:root {
   --ivory: #F6F1E8;
   --ink: #0B0F14;
 }
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 
-body{
+body {
   background: var(--ivory);
   color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* subtle premium grain */
-body:before{
-  content:"";
+body::before {
+  content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: .05;
+  opacity: 0.05;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+/* Better media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Better mobile tap handling */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent form elements from looking cramped on mobile */
+input,
+textarea,
+select,
+button {
+  font: inherit;
 }
