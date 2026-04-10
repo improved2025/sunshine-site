@@ -68,9 +68,6 @@ const programs = [
 ];
 
 function photosFor(slug: string) {
-  // Matches your real structure:
-  // public/media/<slug>/photos/<prefix><nn>.jpg
-  // Example: public/media/fitness-awareness/photos/f01.jpg
   const prefix: Record<string, string> = {
     "medical-outreach": "m",
     "preventive-health": "p",
@@ -88,7 +85,6 @@ function photosFor(slug: string) {
   });
 }
 
-// Optional but recommended for static build
 export function generateStaticParams() {
   return programs.map((p) => ({ slug: p.slug }));
 }
@@ -127,7 +123,7 @@ export default async function ProgramPage({ params }: Props) {
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/donate"
-            className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold bg-sunshine-green text-white hover:opacity-95 transition"
+            className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold bg-black text-white hover:opacity-95 transition"
           >
             Donate
           </Link>
@@ -183,7 +179,7 @@ export default async function ProgramPage({ params }: Props) {
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   href="/donate"
-                  className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold bg-sunshine-green text-white hover:opacity-95 transition"
+                  className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold bg-black text-white hover:opacity-95 transition"
                 >
                   Fund this program
                 </Link>

@@ -35,9 +35,6 @@ const programs = [
 ];
 
 function photosFor(slug: string) {
-  // Matches your real structure:
-  // public/media/<slug>/photos/<prefix><nn>.jpg
-  // Example: public/media/fitness-awareness/photos/f01.jpg
   const prefix: Record<string, string> = {
     "medical-outreach": "m",
     "preventive-health": "p",
@@ -105,7 +102,7 @@ export default function ProgramsPage() {
                   <div className="mt-7 flex flex-wrap gap-3">
                     <Link
                       href={`/programs/${p.slug}`}
-                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold bg-sunshine-green text-white hover:opacity-95 transition"
+                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold bg-black text-white hover:opacity-95 transition"
                     >
                       Learn more
                     </Link>

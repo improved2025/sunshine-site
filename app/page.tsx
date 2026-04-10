@@ -57,7 +57,6 @@ const programs: Program[] = [
 ];
 
 export default function HomePage() {
-  // Hero rotating images (your existing)
   const heroImages = useMemo(
     () => ["/hero/hero-1.jpg", "/hero/hero-2.jpg", "/hero/hero-3.jpg", "/hero/hero-4.jpg", "/hero/hero-5.jpg"],
     []
@@ -72,7 +71,6 @@ export default function HomePage() {
     return () => window.clearInterval(id);
   }, [heroImages.length]);
 
-  // Modal
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<Program | null>(null);
 
@@ -83,11 +81,9 @@ export default function HomePage() {
 
   function closeModal() {
     setOpen(false);
-    // slight delay so the close animation feels clean (optional)
     window.setTimeout(() => setSelected(null), 120);
   }
 
-  // Escape key to close
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -95,7 +91,6 @@ export default function HomePage() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   return (
@@ -246,9 +241,12 @@ export default function HomePage() {
                     <span className="text-xs uppercase tracking-[0.18em] text-brand-ink/55">
                       {p.label}
                     </span>
-                    <span className="text-sm font-semibold text-brand-ink/65 group-hover:text-brand-ink transition">
+                    <Link
+                      href={p.href}
+                      className="text-sm font-semibold text-brand-ink/65 group-hover:text-brand-ink transition"
+                    >
                       Explore →
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </div>
