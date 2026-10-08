@@ -40,6 +40,11 @@ const boardMembers: BoardMember[] = [
     role: "Board Member",
     bio: "Dr. Jeff Traub, MD, serves on the Board of Sunshine Medical Care Initiative, contributing medical insight and leadership to the organization’s healthcare mission. His involvement strengthens the initiative’s commitment to quality care and meaningful community impact.",
   },
+  {
+    name: "Dr. Sandea Greene-Harris, MD",
+    role: "Board Member & Deputy Medical Director",
+    bio: "Dr. Sandea Greene-Harris, MD, serves as a Board Member and Deputy Medical Director of Sunshine Medical Care Initiative. As a neurosurgeon, she brings valuable clinical expertise, medical leadership, and a strong commitment to quality patient care. In her role with SMCI, she helps support the organization’s medical direction, clinical standards, and the delivery of safe, effective healthcare services to underserved communities.",
+  },
 ];
 
 function LeadershipSection() {
@@ -101,9 +106,11 @@ function LeadershipSection() {
                     <p className="text-xs uppercase tracking-[0.18em] text-white/60">
                       Leadership Bio
                     </p>
+
                     <h3 className="mt-2 font-heading text-3xl md:text-4xl leading-tight">
                       {selectedMember.name}
                     </h3>
+
                     <p className="mt-2 text-sm uppercase tracking-[0.14em] text-white/70">
                       {selectedMember.role}
                     </p>
